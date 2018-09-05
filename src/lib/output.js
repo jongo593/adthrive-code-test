@@ -17,7 +17,7 @@ function write(dest, content) {
             content = '';
         }
         _ensureDirectoryExistence(dest);
-        fs.writeFile(dest, content, _writeHandler)
+        fs.writeFile(dest, content, _writeHandler(resolve, reject))
     });
 }
 

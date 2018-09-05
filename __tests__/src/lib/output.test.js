@@ -19,12 +19,12 @@ describe('Output', () => {
         it('should set content to an empty string if it is falsey', () => {
             fs.existsSync.mockImplementation(() => true)
             output.write('some/dest', null);
-            expect(fs.writeFile).toHaveBeenCalledWith('some/dest', '', output._writeHandler)
+            expect(fs.writeFile.mock.calls[0][1]).toBe('')
         });
         it('should set content to an empty string if it not falsey', () => {
             fs.existsSync.mockImplementation(() => true)
             output.write('some/dest', 'content');
-            expect(fs.writeFile).toHaveBeenCalledWith('some/dest', 'content', output._writeHandler)
+            expect(fs.writeFile.mock.calls[0][1]).toBe('content')
         });
     });
     describe('_ensureDirectoryExistence', () => {
