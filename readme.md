@@ -9,7 +9,8 @@ A post is only a top post if it matches this criteria:
 
 ## Installtion
 ```
-git clone 
+git clone git@github.com:jongo593/adthrive-code-test.git
+cd adthrive-code-test
 npm install
 ```
 
